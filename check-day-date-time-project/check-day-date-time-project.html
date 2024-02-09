@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+   }
+   body{
+    background-color: rgb(106, 183, 179);
+    font-size: 30px;
+   }
+   .container
+   {
+    text-align: center;
+    background-color: aqua;
+    max-width: 600px;
+    height: 400px;
+    margin: 12% auto;
+    padding: 60px;
+    outline: 3px solid salmon;
+    border-radius: 10px;
+    box-shadow: -6px -6px 10px gray,0px 0px 8px gray;
+
+
+   }
+   p{
+    font-family: sans-serif;
+    color: rgb(24, 26, 22);
+    font-weight:700;
+    text-transform: capitalize;
+   }
+   button
+   {
+    margin-top: 30px;
+    /* width: 100px; */
+    padding: 10px 40px;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    border: none;
+    background-color: rgb(3, 234, 157);
+    color: #100909;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 6px 6px 10px gray,0px 0px 4px gray;
+    background: transparent;
+    /* background-color: #fff; */
+    transition: transform 2s ease, box-shadow 0.3s ease;
+    
+
+   }
+   button:hover
+   {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+   }
+   #day-date-time{
+    margin-top: 20px;
+    border: 2px solid rebeccapurple;
+    border-radius: 10px;
+    font-weight: 200;
+  
+   }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <p>click the button to display what day, date and time<br> it is today!</p>
+    <button onclick="myFunction()">
+      click it
+    </button>
+    <p id="day-date-time"></p>
+  </div>
+  <script> 
+    function myFunction()
+    {
+      var today = new Date();
+      var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+      
+      var dayLabel = "<strong>Day:</strong> ";
+      var dateLabel = "<strong>Date:</strong> ";
+      var timeLabel = "<strong>Time:</strong> ";
+
+      var day = today.toLocaleDateString('en-US', { weekday: 'long' });
+      var date = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      var time = today.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' });
+
+      var output = dayLabel + day + "<br>" + dateLabel + date + "<br>" + timeLabel + time;
+
+      document.getElementById("day-date-time").innerHTML = output;
+      // Update the time immediately
+      myFunction();
+    }
+
+    // Update the time every second
+    setInterval(myFunction, 1000);
+  </script>
+</body>
+</html>
