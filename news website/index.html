@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <div class="main-nav container flex">
+      <a href="index.html" class="company-logo"><img src="logo.png" alt="company logo"></a>
+      <!-- Hamburger Menu Icon for smaller screens -->
+      <div class="hamburger-menu" onclick="toggleNav()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      
+      <!-- Navigation Items -->
+      <div class="items-list" id="mainNav">
+        <ul class="flex">
+          <li><a href="#" onclick="news('Ipl')">Ipl</a></li>
+          <li><a href="#" onclick="news('Technology')">Technology</a></li>
+          <li><a href="#" onclick="news('politics')">Entertainment</a></li>
+        </ul>
+        <!-- Cancel Button for smaller screens -->
+        <div class="cancel-btn" onclick="toggleNav()">&times;</div>
+      </div>
+
+      <!-- Input field and Search button -->
+      <div class="btn-ser-container flex">
+        <input type="text" class="new-input" placeholder="e.g apple">
+        <button class="search-btn" onclick="search()">Search</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="main-card-container container flex ">
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
